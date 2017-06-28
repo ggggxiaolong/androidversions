@@ -1,6 +1,6 @@
 ext {
   //Android
-  buildToolsVersion = "26-rc2"
+  buildToolsVersion = "26.0.0"
   minSdkVersion = 16
   targetSdkVersion = 25
   compileSdkVersion = 25
@@ -30,6 +30,7 @@ ext {
   arouterCompilerVersion = '1.1.0'
   arouterAnnotationVersion = '1.0.3'
   stethoVersion = '1.5.0'
+  streamVersion = '1.1.8'
 
   //Testing
   robolectricVersion = '3.3.1'
@@ -88,6 +89,8 @@ ext {
 
                      immutables           : "org.immutables:value:${immutabelsVersion}",
                      immutablesGson       : "org.immutables:gson:${immutabelsVersion}",
-      
+
+                     stream               : "com.annimon:stream:${streamVersion}",
+
                      leakCanary           : "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",]
 }
