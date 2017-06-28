@@ -30,3 +30,16 @@ apply from: 'dependencies/dependencies.gradle'
   implementation appDependencies.appcompat
  ...
  ```
+
+添加debug 的签名
+```java
+signingConfigs {
+    debug {
+      storeFile file('../buildsystem/debug.keystore')
+      storePassword 'android'
+      keyAlias 'androiddebugkey'
+      keyPassword 'android'
+    }
+    ...
+}
+```
