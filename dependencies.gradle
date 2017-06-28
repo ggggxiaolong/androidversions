@@ -10,8 +10,8 @@ ext {
   glideVersion = '3.7.0'
   daggerVersion = '2.11-rc2'
   butterKnifeVersion = '8.6.0'
-  rxJavaVersion = '1.2.7'
-  rxAndroidVersion = '1.2.1'
+  rxJavaVersion = '2.1.1'
+  rxAndroidVersion = '2.0.1'
   javaxAnnotationVersion = '1.0'
   javaxInjectVersion = '1'
   gsonVersion = '2.8.0'
@@ -65,8 +65,8 @@ ext {
                      recycleritemdecorator: "com.dinuscxj:recycleritemdecoration:${recycleritemdecoratorVersion}",
                      timber               : "com.jakewharton.timber:timber:${timberVersion}",
                      arrow                : "com.fernandocejas:arrow:${arrowVersion}",
-                     rxJava               : "io.reactivex:rxjava:${rxJavaVersion}",
-                     rxAndroid            : "io.reactivex:rxandroid:${rxAndroidVersion}",
+                     rxJava               : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+                     rxAndroid            : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
 
                      junit                : "junit:junit:${jUnitVersion}",
                      assertj              : "org.assertj:assertj-core:${assertJVersion}",
@@ -77,7 +77,7 @@ ext {
 
                      retrofit2            : "com.squareup.retrofit2:retrofit:${retrofit2Version}",
                      retrofit2Gson        : "com.squareup.retrofit2:converter-gson:${retrofit2Version}",
-                     retrofit2Rxjava      : "com.squareup.retrofit2:adapter-rxjava:${retrofit2Version}",
+                     retrofit2Rxjava      : "com.squareup.retrofit2:adapter-rxjava2:${retrofit2Version}",
                      okhttp               : "com.squareup.okhttp3:okhttp:${okHttp3Veriosn}",
                      okhttpLog            : "com.squareup.okhttp3:logging-interceptor:${okHttp3Veriosn}",
                      stetho               : "com.facebook.stetho:stetho:${stethoVersion}",
