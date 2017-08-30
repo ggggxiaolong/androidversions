@@ -35,7 +35,7 @@ apply from: 'dependencies/dependencies.gradle'
 ```java
 signingConfigs {
     debug {
-      storeFile file('../buildsystem/debug.keystore')
+      storeFile file('../dependencies/debug.keystore')
       storePassword 'android'
       keyAlias 'androiddebugkey'
       keyPassword 'android'
