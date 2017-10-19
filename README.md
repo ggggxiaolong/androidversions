@@ -11,7 +11,7 @@
  //或者直接在项目中使用
  apply from: "https://raw.github.com/ggggxiaolong/androidversions/master/versions.gradle"
  ```
-* 修改主项目根目录下的build.gradle文件，在第一行添加下面的代码（注意子模块的名称）
+* 修改主项目根目录下的build.gradle文件
 ```groovy
 ...
 buildscript {
