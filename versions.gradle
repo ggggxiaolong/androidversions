@@ -49,6 +49,10 @@ support.core_utils = "com.android.support:support-core-utils:$versions.support"
 support.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.contraint_layout"
 deps.support = support
 
+def databinding =[:]
+databinding.compiler = "com.android.databinding:compiler:$versions.android_gradle_plugin"
+deps.databinding = databinding
+
 def room = [:]
 room.runtime = "android.arch.persistence.room:runtime:$versions.arch"
 room.compiler = "android.arch.persistence.room:compiler:$versions.arch"
@@ -143,6 +147,7 @@ deps.bugly = "com.tencent.bugly:crashreport:$versions.bugly"
 deps.loadingButtom = "com.github.StevenDXC:DxLoadingButton:$versions.loadingButtom"
 //recyclervire divider
 deps.flexibledivider = "com.yqritc:recyclerview-flexibledivider:$versions.flexibledivider"
+
 ext.deps = deps
 
 
