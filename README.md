@@ -8,8 +8,6 @@
 * 将这个项目添加为子项目（我一般会把它命名为dependencies）
  ```shell
  git submodule add git@github.com:ggggxiaolong/androidversions.git dependencies
- //或者直接在项目中使用
- apply from: "https://raw.github.com/ggggxiaolong/androidversions/master/versions.gradle"
  ```
 * 修改主项目根目录下的build.gradle文件
 ```groovy
@@ -29,10 +27,10 @@ buildscript {
 ...
 ```
 
-一个完整的build文件示例
+项目根路径完整build文件
 
 ```groovy
-//项目地址  https://github.com/ggggxiaolong/Hencode
+//项目地址  https://github.com/ggggxiaolong/Demo
 apply plugin: 'com.github.ben-manes.versions'
 import org.ajoberstar.grgit.Grgit
 
@@ -58,7 +56,8 @@ allprojects {
 }
 
 subprojects {
-  def isAppModule = isModule.toBoolean() || it.name.equals("app")
+  def isModule = false
+  def isAppModule = isModule || it.name.equals("app")
   def dataBindingModules = ["app"]
   //使用dataBinding的模块
   def enableDataBinding = dataBindingModules.contains(it.name)
@@ -74,7 +73,7 @@ subprojects {
     compileSdkVersion build_versions.compile_sdk
     buildToolsVersion build_versions.build_tools
     defaultConfig {
-      applicationId "com.mrtan.hencode"
+      if(isAppModule) applicationId "com.mrtan.demo"
       minSdkVersion build_versions.min_sdk
       targetSdkVersion build_versions.target_sdk
 
@@ -83,13 +82,6 @@ subprojects {
       testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
       multiDexEnabled true
       vectorDrawables.useSupportLibrary = true //drawable支持
-
-      //arouter
-      //      javaCompileOptions {
-      //        annotationProcessorOptions {
-      //          arguments = [ moduleName : project.getName() ]
-      //        }
-      //      }
     }
     buildTypes {
       debug {
@@ -104,15 +96,6 @@ subprojects {
       }
     }
 
-    //    flavorDimensions "mode"
-    //    productFlavors {
-    //      dev {
-    //        applicationIdSuffix ".dev"
-    //      }
-    //      prod {
-    //      }
-    //    }
-
     compileOptions {
       sourceCompatibility JavaVersion.VERSION_1_8
       targetCompatibility JavaVersion.VERSION_1_8
@@ -126,11 +109,10 @@ subprojects {
   }
 
   dependencies {
+    if(enableDataBinding) kapt deps.databinding.compiler
     implementation deps.kotlin.stdlib
-
     implementation deps.rxjava2
     implementation deps.rx_android
-    debugImplementation deps.leackCanary
   }
 }
 
@@ -150,5 +132,43 @@ dependencies {
   androidTestImplementation deps.atsl.runner
   androidTestImplementation deps.espresso.core
 }
+
+
+android {
+  buildTypes {
+    debug {
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), '../dependencies/proguard-rules-debug.pro'
+      minifyEnabled true
+      zipAlignEnabled true
+      jniDebuggable true
+    }
+    release {
+      minifyEnabled true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), '../dependencies/proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  kapt deps.dagger.compiler
+  kapt deps.glide.compile
+
+  implementation project(':common')
+  implementation deps.support.constraint_layout
+  implementation deps.support.app_compat
+  implementation deps.support.design
+  implementation deps.dagger.runtime
+  implementation deps.timber
+  implementation deps.glide.runtime
+  implementation deps.glide.okHttp3
+  implementation deps.glide.recyclerView
+  implementation deps.arrow
+  testImplementation deps.junit
+  androidTestImplementation deps.atsl.runner
+  testImplementation deps.junit
+  testImplementation deps.mockito.core
+  testImplementation deps.roboletric
+  debugImplementation deps.leackCanary
+}
 ```
-* 示例项目   https://github.com/ggggxiaolong/Hencode
+* 示例项目   https://github.com/ggggxiaolong/Demo
