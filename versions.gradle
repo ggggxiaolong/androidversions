@@ -36,6 +36,7 @@ versions.bugly = "2.6.6.1"
 versions.loadingButtom = '1.9'
 versions.flexibledivider = '1.4.0'
 versions.superCalendar='v1.4'
+versions.mp_android_chart = 'v3.0.2'
 
 def deps = [:]
 
@@ -147,6 +148,7 @@ deps.bugly = "com.tencent.bugly:crashreport:$versions.bugly"
 //自定义view
 deps.loadingButtom = "com.github.StevenDXC:DxLoadingButton:$versions.loadingButtom"
 deps.superCalendar = "com.github.MagicMashRoom:SuperCalendar:$versions.superCalendar"
+deps.MPAndroidChart = "com.github.PhilJay:MPAndroidChart:$versions.mp_android_chart"
 //recyclervire divider
 deps.flexibledivider = "com.yqritc:recyclerview-flexibledivider:$versions.flexibledivider"
 
