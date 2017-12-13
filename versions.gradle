@@ -1,7 +1,7 @@
 ext.deps = [:]
 def versions = [:]
-versions.android_gradle_plugin = "3.1.0-alpha04"
-versions.kotlin = "1.1.60"
+versions.android_gradle_plugin = "3.1.0-alpha05"
+versions.kotlin = "1.2.10"
 versions.grgit = "2.1.0"
 versions.libs_version = "0.17.0"
 versions.arch = hasProperty("ARCH_VERSION")? getProperty("ARCH_VERSION"):"1.0.0"
@@ -14,13 +14,13 @@ versions.retrofit = "2.3.0"
 versions.okhttp3 = "3.9.0"
 versions.mockwebserver = "3.8.1"
 versions.apache_commons = "2.5"
-versions.mockito = "2.12.0"
+versions.mockito = "2.13.0"
 versions.mockito_all = "2.7.19"
 versions.dexmaker = "2.2.0"
 versions.contraint_layout = "1.1.0-beta3"
-versions.glide = "4.3.1"
+versions.glide = "4.4.0"
 versions.timber = "4.6.0"
-versions.rxjava2 = "2.1.6"
+versions.rxjava2 = "2.1.7"
 versions.rx_android = "2.0.1"
 versions.atsl_runner = "1.0.1"
 versions.atsl_rules = "1.0.1"
@@ -36,7 +36,10 @@ versions.bugly = "2.6.6.1"
 versions.loadingButtom = '1.9'
 versions.flexibledivider = '1.4.0'
 versions.superCalendar='v1.4'
-versions.mp_android_chart = 'v3.0.2'
+versions.mp_android_chart = 'v3.0.3'
+versions.compressor = "2.1.0"
+versions.photopicker = "0.9.10@aar"
+versions.materialDialogs = "0.9.6.0"
 
 def deps = [:]
 
@@ -128,6 +131,11 @@ glide.okHttp3 = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
 glide.recyclerView = "com.github.bumptech.glide:recyclerview-integration:$versions.glide"
 deps.glide = glide
 
+def materialDialogs = [:]
+materialDialogs.core = "com.afollestad.material-dialogs:core:$versions.materialDialogs"
+materialDialogs.commons = "com.afollestad.material-dialogs:commons:$versions.materialDialogs"
+deps.materialDialogs = materialDialogs
+
 deps.paging = "android.arch.paging:runtime:$versions.paging"
 deps.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito:$versions.dexmaker"
 deps.timber = "com.jakewharton.timber:timber:$versions.timber"
@@ -151,6 +159,9 @@ deps.superCalendar = "com.github.MagicMashRoom:SuperCalendar:$versions.superCale
 deps.MPAndroidChart = "com.github.PhilJay:MPAndroidChart:$versions.mp_android_chart"
 //recyclervire divider
 deps.flexibledivider = "com.yqritc:recyclerview-flexibledivider:$versions.flexibledivider"
+//图片压缩
+deps.compressor = "id.zelory:compressor:$versions.compressor"
+deps.photopicker = "me.iwf.photopicker:PhotoPicker:$versions.photopicker"
 
 ext.deps = deps
 
