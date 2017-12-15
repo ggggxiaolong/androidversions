@@ -38,6 +38,7 @@ versions.flexibledivider = '1.4.0'
 versions.superCalendar='v1.4'
 versions.mp_android_chart = 'v3.0.3'
 versions.compressor = "2.1.0"
+versions.photopicker2 = "0.10@aar"
 versions.photopicker = "0.9.10@aar"
 versions.materialDialogs = "0.9.6.0"
 versions.bintray = "0.8.0"
@@ -163,6 +164,7 @@ deps.flexibledivider = "com.yqritc:recyclerview-flexibledivider:$versions.flexib
 //图片压缩
 deps.compressor = "id.zelory:compressor:$versions.compressor"
 deps.photopicker = "me.iwf.photopicker:PhotoPicker:$versions.photopicker"
+deps.photopicker2 = "me.mrtan.photopicker:PhotoPicker:$versions.photopicker2"
 
 deps.bintray = "com.novoda:bintray-release:$versions.bintray"
 
