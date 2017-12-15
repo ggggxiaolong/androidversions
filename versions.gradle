@@ -40,6 +40,7 @@ versions.mp_android_chart = 'v3.0.3'
 versions.compressor = "2.1.0"
 versions.photopicker = "0.9.10@aar"
 versions.materialDialogs = "0.9.6.0"
+versions.bintray = "0.8.0"
 
 def deps = [:]
 
@@ -163,11 +164,13 @@ deps.flexibledivider = "com.yqritc:recyclerview-flexibledivider:$versions.flexib
 deps.compressor = "id.zelory:compressor:$versions.compressor"
 deps.photopicker = "me.iwf.photopicker:PhotoPicker:$versions.photopicker"
 
+deps.bintray = "com.novoda:bintray-release:$versions.bintray"
+
 ext.deps = deps
 
 
 def build_versions = [:]
-build_versions.min_sdk = 19
+build_versions.min_sdk = 14
 build_versions.target_sdk = 27
 build_versions.compile_sdk = 27
 build_versions.build_tools = "27.0.2"
