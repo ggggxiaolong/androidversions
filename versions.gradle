@@ -192,6 +192,7 @@ def addRepos(RepositoryHandler handler) {
   handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
   handler.maven{ url 'https://jitpack.io' }
   handler.maven{ url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2' }
+  handler.maven { url "$rootDir/../node_modules/react-native/android" }
 }
 ext.addRepos = this.&addRepos
 
