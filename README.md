@@ -73,7 +73,7 @@ subprojects {
     compileSdkVersion build_versions.compile_sdk
     buildToolsVersion build_versions.build_tools
     defaultConfig {
-      if(isAppModule) applicationId "com.mrtan.demo"
+      if(isAppModule) applicationId "com.mrtan.demo" //这里改成项目id
       minSdkVersion build_versions.min_sdk
       targetSdkVersion build_versions.target_sdk
 
@@ -85,14 +85,14 @@ subprojects {
     }
     buildTypes {
       debug {
-        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-debug.pro'
+        proguardFiles getDefaultProguardFile('proguard-android.txt'), '../dependecies/proguard-rules-debug.pro'
         minifyEnabled true
         zipAlignEnabled true
         jniDebuggable true
       }
       release {
         minifyEnabled true
-        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        proguardFiles getDefaultProguardFile('proguard-android.txt'), '../dependecies/proguard-rules.pro'
       }
     }
 
