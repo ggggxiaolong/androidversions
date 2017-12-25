@@ -281,3 +281,4 @@
 
 #lombok
 -dontwarn java.beans.ConstructorProperties
+-dontwarn lombok.**
