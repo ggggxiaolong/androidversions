@@ -42,6 +42,8 @@ versions.photopicker2 = "0.10.1@aar"
 versions.photopicker = "0.9.10@aar"
 versions.materialDialogs = "0.9.6.0"
 versions.bintray = "0.8.0"
+versions.lombok = "1.16.18"
+versions.gradle_lombok = "1.11"
 
 def deps = [:]
 
@@ -165,6 +167,10 @@ deps.flexibledivider = "com.yqritc:recyclerview-flexibledivider:$versions.flexib
 deps.compressor = "id.zelory:compressor:$versions.compressor"
 deps.photopicker = "me.iwf.photopicker:PhotoPicker:$versions.photopicker"
 deps.photopicker2 = "me.mrtan.photopicker:PhotoPicker:$versions.photopicker2"
+//lombok 和插件配合使用
+// provided deps.lombok
+deps.lombok = "org.projectlombok:lombok:$versions.lombok"
+deps.gradle_lombok = "io.franzbecker:gradle-lombok:$versions.gradle_lombok"
 
 deps.bintray = "com.novoda:bintray-release:$versions.bintray"
 
@@ -175,7 +181,7 @@ def build_versions = [:]
 build_versions.min_sdk = 19
 build_versions.target_sdk = 27
 build_versions.compile_sdk = 27
-build_versions.build_tools = "27.0.2"
+build_versions.build_tools = "27.0.3"
 ext.build_versions = build_versions
 
 def addGitVersion(String versionName, int versionCode){
