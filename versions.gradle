@@ -44,6 +44,7 @@ versions.materialDialogs = "0.9.6.0"
 versions.bintray = "0.8.0"
 versions.lombok = "1.16.18"
 versions.gradle_lombok = "1.11"
+versions.bottomNavigationEx = "1.2.4"
 
 def deps = [:]
 
@@ -171,6 +172,7 @@ deps.photopicker2 = "me.mrtan.photopicker:PhotoPicker:$versions.photopicker2"
 // provided deps.lombok
 deps.lombok = "org.projectlombok:lombok:$versions.lombok"
 deps.gradle_lombok = "io.franzbecker:gradle-lombok:$versions.gradle_lombok"
+deps.bottomNavigationEx = "com.github.ittianyu:BottomNavigationViewEx:$versions.bottomNavigationEx"
 
 deps.bintray = "com.novoda:bintray-release:$versions.bintray"
 
