@@ -30,7 +30,7 @@ buildscript {
 项目根路径完整build文件
 
 ```groovy
-//项目地址  https://github.com/ggggxiaolong/Demo
+//项目地址  https://github.com/ggggxiaolong/exampleProject
 apply plugin: 'com.github.ben-manes.versions'
 import org.ajoberstar.grgit.Grgit
 
@@ -83,18 +83,6 @@ subprojects {
       multiDexEnabled true
       vectorDrawables.useSupportLibrary = true //drawable支持
     }
-    buildTypes {
-      debug {
-        proguardFiles getDefaultProguardFile('proguard-android.txt'), '../dependecies/proguard-rules-debug.pro'
-        minifyEnabled true
-        zipAlignEnabled true
-        jniDebuggable true
-      }
-      release {
-        minifyEnabled true
-        proguardFiles getDefaultProguardFile('proguard-android.txt'), '../dependecies/proguard-rules.pro'
-      }
-    }
 
     compileOptions {
       sourceCompatibility JavaVersion.VERSION_1_8
@@ -142,10 +130,15 @@ android {
       zipAlignEnabled true
       jniDebuggable true
     }
-    release {
-      minifyEnabled true
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), '../dependencies/proguard-rules.pro'
-    }
+    debuggable false
+      postprocessing {
+        removeUnusedCode true
+        removeUnusedResources true
+        obfuscate true
+        optimizeCode true
+        proguardFile 'proguard-rules.pro'
+      }
+      signingConfig signingConfigs.release
   }
 }
 
@@ -171,4 +164,4 @@ dependencies {
   debugImplementation deps.leackCanary
 }
 ```
-* 示例项目   https://github.com/ggggxiaolong/Demo
+* 示例项目   https://github.com/ggggxiaolong/exampleProject
