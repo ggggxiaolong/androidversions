@@ -1,6 +1,6 @@
 ext.deps = [:]
 def versions = [:]
-versions.android_gradle_plugin = "3.1.0-alpha09"
+versions.android_gradle_plugin = "3.1.0-beta1"
 versions.kotlin = "1.2.21"
 versions.grgit = "2.1.0"
 versions.libs_version = "0.17.0"
@@ -37,7 +37,7 @@ versions.stetho = "1.5.0"
 versions.bugly = "2.6.6.1"
 versions.loadingButtom = '1.9'
 versions.flexibledivider = '1.4.0'
-versions.superCalendar='1.6'
+versions.superCalendar='v1.4'
 versions.mp_android_chart = 'v3.0.3'
 versions.compressor = "2.1.0"
 versions.photopicker2 = "0.10.1@aar"
