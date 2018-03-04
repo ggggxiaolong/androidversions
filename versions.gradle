@@ -47,6 +47,7 @@ versions.bintray = "0.8.0"
 versions.lombok = "1.16.18"
 versions.gradle_lombok = "1.11"
 versions.bottomNavigationEx = "1.2.4"
+versions.autoDispose = "0.6.1"
 
 def deps = [:]
 
@@ -142,6 +143,15 @@ def materialDialogs = [:]
 materialDialogs.core = "com.afollestad.material-dialogs:core:$versions.materialDialogs"
 materialDialogs.commons = "com.afollestad.material-dialogs:commons:$versions.materialDialogs"
 deps.materialDialogs = materialDialogs
+
+def autoDispose = [:]
+autoDispose.runtime = "com.uber.autodispose:autodispose:$versions.autoDispose"
+autoDispose.android = "com.uber.autodispose:autodispose-android:$versions.autoDispose"
+autoDispose.android_arc = "com.uber.autodispose:autodispose-android-archcomponents:$versions.autoDispose"
+autoDispose.kotlin = "com.uber.autodispose:autodispose-kotlin:$versions.autoDispose"
+autoDispose.android_kotlin = "com.uber.autodispose:com.uber.autodispose:autodispose-android-kotlin:$versions.autoDispose"
+autoDispose.android_arc_kotlin = "com.uber.autodispose:autodispose-android-archcomponents-kotlin:$versions.autoDispose"
+deps.autoDispose = autoDispose
 
 deps.paging = "android.arch.paging:runtime:$versions.paging"
 deps.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito:$versions.dexmaker"
