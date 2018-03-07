@@ -40,34 +40,10 @@
 -keepattributes SourceFile,LineNumberTable
 
 # 混淆字典
--obfuscationdictionary dictionary-drakeet.txt
--classobfuscationdictionary dictionary-drakeet.txt
--packageobfuscationdictionary dictionary-drakeet.txt
+#-obfuscationdictionary dictionary-drakeet.txt
+#-classobfuscationdictionary dictionary-drakeet.txt
+#-packageobfuscationdictionary dictionary-drakeet.txt
 
 # 把代码以及所使用到的各种第三方库代码统统移动到同一个包下
--repackageclasses 'com.mrtan.code'
+-repackageclasses 'com.mrtan.data'
 -allowaccessmodification
-
-# bugly
--dontwarn com.tencent.bugly.**
--keep public class com.tencent.bugly.**{*;}
-
-# retrofit
-# Platform calls Class.forName on types which do not exist on Android to determine platform.
-#-dontnote retrofit2.Platform
-# Platform used when running on Java 8 VMs. Will not be used at runtime.
-#-dontwarn retrofit2.Platform$Java8
-# Retain generic type information for use by reflection by converters and adapters.
-#-keepattributes Signature
-# Retain declared checked exceptions for use by a Proxy instance.
-#-keepattributes Exceptions
-
-#okio
-#-dontwarn okio.**
-
-#okhttp3
-#-dontwarn okhttp3.**
-#-dontwarn javax.annotation.**
-#-dontwarn org.conscrypt.**
-# A resource is loaded with a relative path so the package of this class must be preserved.
-#-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
