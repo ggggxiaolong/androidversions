@@ -1,7 +1,7 @@
 ext.deps = [:]
 def versions = [:]
-versions.android_gradle_plugin = "3.2.0-alpha07"
-versions.kotlin = "1.2.30"
+versions.android_gradle_plugin = "3.2.0-alpha11"
+versions.kotlin = "1.2.31"
 versions.grgit = "2.1.1"
 versions.libs_version = "0.17.0"
 versions.lifecycle = "1.1.0"
@@ -22,13 +22,13 @@ versions.dexmaker = "2.2.0"
 versions.contraint_layout = "1.1.0-beta5"
 versions.glide = "4.6.1"
 versions.timber = "4.6.1"
-versions.rxjava2 = "2.1.10"
+versions.rxjava2 = "2.1.12"
 versions.rx_android = "2.0.2"
 versions.atsl_runner = "1.0.1"
 versions.atsl_rules = "1.0.1"
 versions.hamcrest = "1.3"
 versions.paging = "1.0.0-alpha2"
-versions.immutables = "2.6.0-alpha1"
+versions.immutables = "2.6.0-alpha3"
 versions.gson = "2.8.2"
 versions.leackCanary = "1.5.4"
 versions.javaxInject = "1"
@@ -63,7 +63,7 @@ support.constraint_layout = "com.android.support.constraint:constraint-layout:$v
 deps.support = support
 
 def databinding =[:]
-databinding.compiler = "com.android.databinding:compiler:$versions.android_gradle_plugin"
+databinding.compiler = "com.android.databinding:compiler:3.2.0-alpha10"
 deps.databinding = databinding
 
 def room = [:]
@@ -219,7 +219,7 @@ def addRepos(RepositoryHandler handler) {
   handler.mavenCentral()
   handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
   handler.maven{ url 'https://jitpack.io' }
-  handler.maven{ url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2' }
+  handler.maven{ url 'https://dl.bintray.com/kotlin/kotlin-dev/' }
   handler.maven { url "$rootDir/../node_modules/react-native/android" }
 }
 ext.addRepos = this.&addRepos
