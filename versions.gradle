@@ -1,13 +1,13 @@
 ext.deps = [:]
 def versions = [:]
-versions.android_gradle_plugin = "3.2.0-alpha12"
-versions.kotlin = "1.2.31"
+versions.android_gradle_plugin = "3.2.0-alpha13"
+versions.kotlin = "1.2.41"
 versions.grgit = "2.2.0"
 versions.libs_version = "0.17.0"
 versions.lifecycle = "1.1.1"
 versions.arch = "1.1.0"
 versions.room = "1.1.0-beta3"
-versions.support = "27.1.0"
+versions.support = "27.1.1"
 versions.dagger = "2.15"
 versions.junit = "4.12"
 versions.espresso = "3.0.2"
@@ -134,7 +134,7 @@ mockito.all = "org.mockito:mockito-all:$versions.mockito_all"
 deps.mockito = mockito
 
 def kotlin = [:]
-kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin"
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
 kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
 kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
 kotlin.android_extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$versions.kotlin"
