@@ -62,10 +62,6 @@ support.core_utils = "com.android.support:support-core-utils:$versions.support"
 support.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.contraint_layout"
 deps.support = support
 
-def databinding =[:]
-databinding.compiler = "com.android.databinding:compiler:3.2.0-alpha10"
-deps.databinding = databinding
-
 def room = [:]
 room.runtime = "android.arch.persistence.room:runtime:$versions.room"
 room.compiler = "android.arch.persistence.room:compiler:$versions.room"
