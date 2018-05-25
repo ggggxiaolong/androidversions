@@ -48,7 +48,7 @@ versions.lombok = "1.16.18"
 versions.gradle_lombok = "1.11"
 versions.bottomNavigationEx = "1.2.4"
 versions.autoDispose = "0.7.0"
-versions.ktx = "1.0.0-alpha1"
+versions.ktx = "0.3"
 
 def deps = [:]
 
