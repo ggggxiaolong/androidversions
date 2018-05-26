@@ -1,3 +1,13 @@
+### 更新内容 (2018.5.25)
+ - com.uber.autodispose:autodispose [0.7.0 -> 0.8.0]
+ - android.arch.lifecycle:viewmodel [1.1.0 -> 1.1.1]
+ - android.arch.persistence.room:compiler [1.1.0-beta3 -> 1.1.1-rc1]
+ - com.google.dagger:dagger [2.15 -> 2.16]
+ - com.google.code.gson:gson [2.8.2 -> 2.8.5]
+ - org.immutables:gson [2.6.0-alpha3 -> 2.6.1]
+ - io.reactivex.rxjava2:rxjava [2.1.12 -> 2.1.14]
+ - com.jakewharton.timber:timber [4.6.1 -> 4.7.0]
+ - org.immutables:value [2.6.0-alpha3 -> 2.6.1]
 ### 更新内容 (2018.4.26)
  - com.uber.autodispose:autodispose [0.6.1 -> 0.7.0]
  - android.arch.lifecycle:compiler [1.1.0 -> 1.1.1]
