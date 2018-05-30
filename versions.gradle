@@ -1,6 +1,6 @@
 ext.deps = [:]
 def versions = [:]
-versions.android_gradle_plugin = "3.2.0-alpha15"
+versions.android_gradle_plugin = "3.2.0-alpha16"
 versions.kotlin = "1.2.41"
 versions.grgit = "2.2.0"
 versions.libs_version = "0.17.0"
@@ -37,7 +37,7 @@ versions.stetho = "1.5.0"
 versions.bugly = "2.6.6.1"
 versions.loadingButtom = '1.9'
 versions.flexibledivider = '1.4.0'
-versions.superCalendar='v1.4'
+versions.superCalendar = 'v1.4'
 versions.mp_android_chart = 'v3.0.3'
 versions.compressor = "2.1.0"
 versions.photopicker2 = "0.10.1@aar"
@@ -50,6 +50,9 @@ versions.bottomNavigationEx = "1.2.4"
 versions.autoDispose = "0.8.0"
 versions.ktx = "0.3"
 versions.navigation = "1.0.0-alpha01"
+versions.anko = "0.10.5"
+versions.retrofitCoroutinesAdapter = "1.0.0"
+versions.flexbox = "1.0.0"
 
 def deps = [:]
 
@@ -116,6 +119,14 @@ def immutables = [:]
 immutables.value = "org.immutables:value:$versions.immutables"
 immutables.gson = "org.immutables:gson:$versions.immutables"
 deps.immutables = immutables
+
+def anko = [:]
+anko.commons = "org.jetbrains.anko:anko-commons:$versions.anko"
+anko.sdk25 = "org.jetbrains.anko:anko-sdk25:$versions.anko"
+anko.v7 = "org.jetbrains.anko:anko-appcompat-v7:$versions.anko"
+anko.sqlite = "org.jetbrains.anko:anko-sqlite:$versions.anko"
+anko.coroutines = "org.jetbrains.anko:anko-coroutines:$versions.anko"
+deps.anko = anko
 
 def espresso = [:]
 espresso.core = "com.android.support.test.espresso:espresso-core:$versions.espresso"
@@ -187,7 +198,6 @@ deps.flexibledivider = "com.yqritc:recyclerview-flexibledivider:$versions.flexib
 //图片压缩
 deps.compressor = "id.zelory:compressor:$versions.compressor"
 deps.photopicker = "me.iwf.photopicker:PhotoPicker:$versions.photopicker"
-deps.photopicker2 = "me.mrtan.photopicker:PhotoPicker:$versions.photopicker2"
 //lombok 和插件配合使用
 // provided deps.lombok
 deps.lombok = "org.projectlombok:lombok:$versions.lombok"
@@ -196,6 +206,8 @@ deps.bottomNavigationEx = "com.github.ittianyu:BottomNavigationViewEx:$versions.
 
 deps.bintray = "com.novoda:bintray-release:$versions.bintray"
 deps.ktx = "androidx.core:core-ktx:$versions.ktx"
+deps.retrofitCoroutinesAdapter = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:$versions.retrofitCoroutinesAdapter"
+deps.flexbox = "com.google.android:flexbox:$versions.flexbox"
 
 ext.deps = deps
 
@@ -207,21 +219,23 @@ build_versions.compile_sdk = 27
 build_versions.build_tools = "27.0.3"
 ext.build_versions = build_versions
 
-def addGitVersion(String versionName, int versionCode){
+def addGitVersion(String versionName, int versionCode) {
   build_versions.androidVersionCode = versionCode
   build_versions.androidVersionName = versionName
 }
+
 ext.addGitVersion = this.&addGitVersion
 
 def addRepos(RepositoryHandler handler) {
   handler.maven { url "https://dl.google.com/dl/android/maven2" }
-  handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+  handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
   handler.jcenter()
   handler.mavenCentral()
   handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
-  handler.maven{ url 'https://jitpack.io' }
-  handler.maven{ url 'https://dl.bintray.com/kotlin/kotlin-dev/' }
+  handler.maven { url 'https://jitpack.io' }
+  handler.maven { url 'https://dl.bintray.com/kotlin/kotlin-dev/' }
   handler.maven { url "$rootDir/../node_modules/react-native/android" }
 }
+
 ext.addRepos = this.&addRepos
 
