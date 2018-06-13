@@ -40,10 +40,10 @@ buildscript {
   addRepos(repositories)
   dependencies {
     classpath deps.android_gradle_plugin
+    classpath deps.kotlin.plugin
     classpath deps.grgit
     //检查版本更新  ./gradlew dependencyUpdates -Drevision=release
     classpath deps.lib_versions
-    classpath deps.kotlin.plugin
     classpath deps.kotlin.android_extensions
   }
 }
@@ -71,7 +71,6 @@ subprojects {
 
   android {
     compileSdkVersion build_versions.compile_sdk
-    buildToolsVersion build_versions.build_tools
     defaultConfig {
       if(isAppModule) applicationId "com.mrtan.demo" //这里改成项目id
       minSdkVersion build_versions.min_sdk
@@ -97,7 +96,6 @@ subprojects {
   }
 
   dependencies {
-    if(enableDataBinding) kapt deps.databinding.compiler
     implementation deps.kotlin.stdlib
     implementation deps.rxjava2
     implementation deps.rx_android
