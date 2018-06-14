@@ -154,7 +154,6 @@ dependencies {
   implementation deps.glide.okHttp3
   implementation deps.glide.recyclerView
   implementation deps.arrow
-  testImplementation deps.junit
   androidTestImplementation deps.atsl.runner
   testImplementation deps.junit
   testImplementation deps.mockito.core
