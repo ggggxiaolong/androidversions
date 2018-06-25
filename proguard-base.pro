@@ -21,6 +21,7 @@
     public static int w(...);
     public static int v(...);
     public static int i(...);
+    public static int e(...);
 }
 
 -keepclassmembers class * {

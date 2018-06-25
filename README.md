@@ -128,7 +128,8 @@ android {
       zipAlignEnabled true
       jniDebuggable true
     }
-    debuggable false
+    release {
+      debuggable false
       postprocessing {
         removeUnusedCode true
         removeUnusedResources true
@@ -137,6 +138,7 @@ android {
         proguardFile 'proguard-rules.pro'
       }
       signingConfig signingConfigs.release
+    }
   }
 }
 
