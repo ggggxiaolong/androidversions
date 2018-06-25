@@ -54,6 +54,7 @@ versions.anko = "0.10.5"
 versions.retrofitCoroutinesAdapter = "1.0.0"
 versions.flexbox = "1.0.0"
 versions.recyclerviewdsl = "1.1.0"
+versions.kotlinx_coroutines_core = "0.23.3"
 
 def deps = [:]
 
@@ -210,6 +211,7 @@ deps.ktx = "androidx.core:core-ktx:$versions.ktx"
 deps.retrofitCoroutinesAdapter = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:$versions.retrofitCoroutinesAdapter"
 deps.flexbox = "com.google.android:flexbox:$versions.flexbox"
 deps.recyclerviewdsl = "cn.edu.twt.retrox:recyclerviewdsl:$versions.recyclerviewdsl"
+deps.kotlinx_coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.kotlinx_coroutines_core"
 
 ext.deps = deps
 
