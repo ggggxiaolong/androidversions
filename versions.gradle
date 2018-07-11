@@ -1,6 +1,6 @@
 ext.deps = [:]
 def versions = [:]
-versions.android_gradle_plugin = "3.2.0-beta02"
+versions.android_gradle_plugin = "3.2.0-beta03"
 versions.kotlin = "1.2.51"
 versions.grgit = "2.2.1"
 versions.libs_version = "0.19.0"
@@ -232,9 +232,9 @@ ext.addGitVersion = this.&addGitVersion
 
 def addRepos(RepositoryHandler handler) {
   handler.maven { url "https://dl.google.com/dl/android/maven2" }
-  handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
   handler.jcenter()
   handler.mavenCentral()
+  handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
   handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
   handler.maven { url 'https://jitpack.io' }
   handler.maven { url "$rootDir/../node_modules/react-native/android" }
