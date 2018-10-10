@@ -82,7 +82,7 @@ def androidx = [
     "core": "androidx.core:core-ktx:$versions.androidx",
     "recyclerView": "androidx.recyclerview:recyclerview:$versions.androidx",
     "sqliteFramework": "androidx.sqlite:sqlite-framework:$versions.androidx",
-    'material': "com.google.android.material:material::$versions.androidx",
+    'material': "com.google.android.material:material:$versions.androidx",
     "test": [
         "runner": "androidx.test:runner:$versions.atsl_runner",
         "rules": "androidx.test:rules:$versions.atsl_rules",
