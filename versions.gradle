@@ -32,7 +32,7 @@ versions.hamcrest = "1.3"
 versions.paging = "2.0.0"
 versions.immutables = "2.7.1"
 versions.gson = "2.8.5"
-versions.leackCanary = "1.5.4"
+versions.leackCanary = "1.6.2"
 versions.javaxInject = "1"
 versions.arrow = "1.0.0"
 versions.stetho = "1.5.0"
@@ -42,23 +42,20 @@ versions.flexibledivider = '1.4.0'
 versions.superCalendar = 'v1.4'
 versions.mp_android_chart = 'v3.0.3'
 versions.compressor = "2.1.0"
-versions.photopicker2 = "0.10.1@aar"
 versions.photopicker = "0.9.12@aar"
 versions.materialDialogs = "2.0.0-beta4"
 versions.bintray = "0.8.0"
 versions.lombok = "1.16.18"
 versions.gradle_lombok = "1.11"
-versions.bottomNavigationEx = "1.2.4"
-versions.autoDispose = "0.8.0"
 versions.ktx = "0.3"
 versions.navigation = "1.0.0-alpha05"
 versions.anko = "0.10.7-rc13"
-versions.retrofitCoroutinesAdapter = "1.0.0"
-versions.flexbox = "1.0.0"
+versions.retrofitCoroutinesAdapter = "0.9.2"
+versions.flexbox = "1.1.0"
 versions.recyclerviewdsl = "1.1.0"
 versions.androidUtils = '1.20.1'
 versions.firebaseMessage = '17.3.1'
-versions.pandora = 'v1.1.4'
+versions.pandora = 'v1.2.1'
 versions.androidx = '1.0.0'
 
 def deps = [:]
@@ -79,76 +76,87 @@ def androidx = [
 ]
 deps.androidx = androidx
 
-def room = [:]
-room.runtime = "androidx.room:room-runtime:$versions.room"
-room.compiler = "androidx.room:room-compiler:$versions.room"
-room.rxjava2 = "androidx.room:room-rxjava2:$versions.room"
-room.testing = "androidx.room:room-testing:$versions.room"
+def room = [
+    "runtime": "androidx.room:room-runtime:$versions.room",
+    "compiler": "androidx.room:room-compiler:$versions.room",
+    "rxjava2": "androidx.room:room-rxjava2:$versions.room",
+    "testing": "androidx.room:room-testing:$versions.room",
+]
 deps.room = room
 
-def lifecycle = [:]
-lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle"
-lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
-lifecycle.viewmodel = "androidx.lifecycle:lifecycle-viewmodel:$versions.lifecycle"
-lifecycle.livedata = "androidx.lifecycle:lifecycle-livedata:$versions.lifecycle"
-lifecycle.java8 = "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
-lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+def lifecycle = [
+    "runtime": "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle",
+    "extensions": "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle",
+    "viewmodel": "androidx.lifecycle:lifecycle-viewmodel:$versions.lifecycle",
+    "livedata": "androidx.lifecycle:lifecycle-livedata:$versions.lifecycle",
+    "java8": "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle",
+    "compiler": "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+]
 deps.lifecycle = lifecycle
 
 def arch_core = [:]
 arch_core.testing = "android.arch.core:core-testing:$versions.arch"
 deps.arch_core = arch_core
 
-def navigation = [:]
-navigation.ui = "android.arch.navigation:navigation-ui:$versions.navigation"
-navigation.fragment = "android.arch.navigation:navigation-fragment:$versions.navigation"
 //apply plugin: "androidx.navigation.safeargs"
-navigation.safe = "android.arch.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
+def navigation = [
+    "ui": "android.arch.navigation:navigation-ui:$versions.navigation",
+    "fragment": "android.arch.navigation:navigation-fragment:$versions.navigation",
+    "safe": "android.arch.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
+]
 deps.navigation = navigation
 
-def retrofit = [:]
-retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
-retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
-retrofit.rxjava2 = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+def retrofit = [
+    "runtime": "com.squareup.retrofit2:retrofit:$versions.retrofit",
+    "gson": "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+    "rxjava2": "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+]
 deps.retrofit = retrofit
 
-def okhttp3 = [:]
-okhttp3.runtime = "com.squareup.okhttp3:okhttp:$versions.okhttp3"
-okhttp3.logging = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3"
-okhttp3.stetho = "com.facebook.stetho:stetho-okhttp3:$versions.stetho"
+def okhttp3 = [
+    "runtime": "com.squareup.okhttp3:okhttp:$versions.okhttp3",
+    "logging": "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3",
+    "stetho": "com.facebook.stetho:stetho-okhttp3:$versions.stetho"
+]
 deps.okhttp3 = okhttp3
 
-def dagger = [:]
-dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
-dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
-dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
-dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
-dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
+def dagger = [
+    "runtime": "com.google.dagger:dagger:$versions.dagger",
+    "android": "com.google.dagger:dagger-android:$versions.dagger",
+    "android_support": "com.google.dagger:dagger-android-support:$versions.dagger",
+    "compiler": "com.google.dagger:dagger-compiler:$versions.dagger",
+    "android_support_compiler": "com.google.dagger:dagger-android-processor:$versions.dagger"
+]
 deps.dagger = dagger
 
-def immutables = [:]
-immutables.value = "org.immutables:value:$versions.immutables"
-immutables.gson = "org.immutables:gson:$versions.immutables"
+def immutables = [
+    "value": "org.immutables:value:$versions.immutables",
+    "gson": "org.immutables:gson:$versions.immutables"
+]
 deps.immutables = immutables
 
-def anko = [:]
+
 // https://github.com/Kotlin/anko
-anko.commons = "org.jetbrains.anko:anko-commons:$versions.anko"
-anko.sdk25 = "org.jetbrains.anko:anko-sdk25:$versions.anko"
-anko.v7 = "org.jetbrains.anko:anko-appcompat-v7:$versions.anko"
-anko.sqlite = "org.jetbrains.anko:anko-sqlite:$versions.anko"
-anko.coroutines = "org.jetbrains.anko:anko-coroutines:$versions.anko"
+def anko = [
+    "commons": "org.jetbrains.anko:anko-commons:$versions.anko",
+    "sdk25": "org.jetbrains.anko:anko-sdk25:$versions.anko",
+    "v7": "org.jetbrains.anko:anko-appcompat-v7:$versions.anko",
+    "sqlite": "org.jetbrains.anko:anko-sqlite:$versions.anko",
+    "coroutines": "org.jetbrains.anko:anko-coroutines:$versions.anko"
+]
 deps.anko = anko
 
-def espresso = [:]
-espresso.core = "com.android.support.test.espresso:espresso-core:$versions.espresso"
-espresso.contrib = "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
-espresso.intents = "com.android.support.test.espresso:espresso-intents:$versions.espresso"
+def espresso = [
+    "core": "com.android.support.test.espresso:espresso-core:$versions.espresso",
+    "contrib": "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
+    "intents": "com.android.support.test.espresso:espresso-intents:$versions.espresso"
+]
 deps.espresso = espresso
 
-def mockito = [:]
-mockito.core = "org.mockito:mockito-core:$versions.mockito"
-mockito.all = "org.mockito:mockito-all:$versions.mockito_all"
+def mockito = [
+    "core": "org.mockito:mockito-core:$versions.mockito",
+    "all": "org.mockito:mockito-all:$versions.mockito_all"
+]
 deps.mockito = mockito
 
 def kotlin = [
@@ -174,40 +182,29 @@ def kotlin = [
         'jdk': "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${versions.kotlinSerialization}",
         'js': "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${versions.kotlinSerialization}",
     ],
-    'plugin':"org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+    'plugin': "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
 ]
 deps.kotlin = kotlin
 
-def glide = [:]
-glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
-glide.compile = "com.github.bumptech.glide:compiler:$versions.glide"
-glide.okHttp3 = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
-glide.recyclerView = "com.github.bumptech.glide:recyclerview-integration:$versions.glide"
+def glide = [
+"runtime": "com.github.bumptech.glide:glide:$versions.glide",
+"compile": "com.github.bumptech.glide:compiler:$versions.glide",
+"okHttp3": "com.github.bumptech.glide:okhttp3-integration:$versions.glide",
+"recyclerView": "com.github.bumptech.glide:recyclerview-integration:$versions.glide"
+]
 deps.glide = glide
 
-def materialDialogs = [:]
-materialDialogs.core = "com.afollestad.material-dialogs:core:$versions.materialDialogs"
-materialDialogs.input = "com.afollestad.material-dialogs:input:$versions.materialDialogs"
-materialDialogs.files = "com.afollestad.material-dialogs:files:$versions.materialDialogs"
-materialDialogs.color = "com.afollestad.material-dialogs:color:$versions.materialDialogs"
+def materialDialogs = [
+"core": "com.afollestad.material-dialogs:core:$versions.materialDialogs",
+"input": "com.afollestad.material-dialogs:input:$versions.materialDialogs",
+"files": "com.afollestad.material-dialogs:files:$versions.materialDialogs",
+"color": "com.afollestad.material-dialogs:color:$versions.materialDialogs"
+]
 deps.materialDialogs = materialDialogs
 
-def autoDispose = [:]
-autoDispose.runtime = "com.uber.autodispose:autodispose:$versions.autoDispose"
-autoDispose.android = "com.uber.autodispose:autodispose-android:$versions.autoDispose"
-autoDispose.android_arc = "com.uber.autodispose:autodispose-android-archcomponents:$versions.autoDispose"
-autoDispose.kotlin = "com.uber.autodispose:autodispose-kotlin:$versions.autoDispose"
-autoDispose.android_kotlin = "com.uber.autodispose:com.uber.autodispose:autodispose-android-kotlin:$versions.autoDispose"
-autoDispose.android_arc_kotlin = "com.uber.autodispose:autodispose-android-archcomponents-kotlin:$versions.autoDispose"
-deps.autoDispose = autoDispose
-
 deps.paging = "androidx.paging:paging-runtime:$versions.paging"
-deps.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito:$versions.dexmaker"
 deps.timber = "com.jakewharton.timber:timber:$versions.timber"
 deps.junit = "junit:junit:$versions.junit"
-deps.mock_web_server = "com.squareup.okhttp3:mockwebserver:$versions.mockwebserver"
-deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
-deps.rx_android = "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
 deps.hamcrest = "org.hamcrest:hamcrest-all:$versions.hamcrest"
 deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
 deps.roboletric = "org.robolectric:robolectric:$versions.robolectric"
@@ -219,26 +216,18 @@ deps.arrow = "com.fernandocejas:arrow:$versions.arrow"
 deps.gson = "com.google.code.gson:gson:$versions.gson"
 deps.bugly = "com.tencent.bugly:crashreport:$versions.bugly"
 //自定义view
-deps.loadingButtom = "com.github.StevenDXC:DxLoadingButton:$versions.loadingButtom"
-deps.superCalendar = "com.github.MagicMashRoom:SuperCalendar:$versions.superCalendar"
 deps.MPAndroidChart = "com.github.PhilJay:MPAndroidChart:$versions.mp_android_chart"
 //recyclervire divider
 deps.flexibledivider = "com.yqritc:recyclerview-flexibledivider:$versions.flexibledivider"
 //图片压缩
 deps.compressor = "id.zelory:compressor:$versions.compressor"
 deps.photopicker = "me.iwf.photopicker:PhotoPicker:$versions.photopicker"
-//lombok 和插件配合使用
-// provided deps.lombok
-deps.lombok = "org.projectlombok:lombok:$versions.lombok"
-deps.gradle_lombok = "io.franzbecker:gradle-lombok:$versions.gradle_lombok"
-deps.bottomNavigationEx = "com.github.ittianyu:BottomNavigationViewEx:$versions.bottomNavigationEx"
 
 deps.bintray = "com.novoda:bintray-release:$versions.bintray"
-deps.ktx = "androidx.core:core-ktx:$versions.ktx"
-deps.retrofitCoroutinesAdapter = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:$versions.retrofitCoroutinesAdapter"
+deps.retrofitCoroutinesAdapter =
+    "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$versions.retrofitCoroutinesAdapter"
 deps.flexbox = "com.google.android:flexbox:$versions.flexbox"
 deps.recyclerviewdsl = "cn.edu.twt.retrox:recyclerviewdsl:$versions.recyclerviewdsl"
-deps.kotlinx_coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.kotlinx_coroutines_core"
 deps.androidUtils = "com.blankj:utilcode:$versions.androidUtils"
 deps.pandora = "com.github.whataa:pandora:$versions.pandora"
 deps.firebaseMessage = "com.google.firebase:firebase-messaging:$versions.firebaseMessage"
@@ -270,7 +259,7 @@ def addRepos(RepositoryHandler handler) {
   handler.maven { url 'https://jitpack.io' }
   handler.maven { url "https://dl.bintray.com/drummer-aidan/maven/" }
   handler.maven { url "$rootDir/../node_modules/react-native/android" }
-  handler.flatDir {dirs 'libs'}
+  handler.flatDir { dirs 'libs' }
 }
 
 ext.addRepos = this.&addRepos
