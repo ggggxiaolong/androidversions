@@ -56,6 +56,7 @@ versions.androidUtils = '1.21.0'
 versions.firebaseMessage = '17.3.4'
 versions.pandora = 'v1.2.1'
 versions.androidx = '1.0.0'
+versions.commonsCode = '1.11'
 
 def deps = [:]
 
@@ -232,6 +233,7 @@ deps.recyclerviewdsl = "cn.edu.twt.retrox:recyclerviewdsl:$versions.recyclerview
 deps.androidUtils = "com.blankj:utilcode:$versions.androidUtils"
 deps.pandora = "com.github.whataa:pandora:$versions.pandora"
 deps.firebaseMessage = "com.google.firebase:firebase-messaging:$versions.firebaseMessage"
+deps.commonsCode = "commons-codec:commons-codec:$versions.commonsCode"
 
 ext.deps = deps
 
