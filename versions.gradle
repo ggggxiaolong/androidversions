@@ -10,7 +10,7 @@ versions.lifecycle = "2.0.0"
 versions.arch = "1.1.1"
 versions.room = "2.0.0"
 versions.support = "27.1.1"
-versions.dagger = "2.16"
+versions.dagger = "2.19"
 versions.junit = "4.12"
 versions.espresso = "3.0.2"
 versions.robolectric = "3.8"
@@ -186,7 +186,8 @@ def kotlin = [
         'jdk': "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${versions.kotlinSerialization}",
         'js': "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${versions.kotlinSerialization}",
     ],
-    'plugin': "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+    'plugin': "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+    'serializationPlugin': "org.jetbrains.kotlin:kotlin-serialization:$versions.kotlin"
 ]
 deps.kotlin = kotlin
 
@@ -257,6 +258,7 @@ def addRepos(RepositoryHandler handler) {
   handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
   handler.maven { url "https://kotlin.bintray.com/kotlinx" }
   handler.maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+  handler.maven { url "https://kotlin.bintray.com/kotlinx" }
   handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
   handler.maven { url 'https://jitpack.io' }
   handler.maven { url "https://dl.bintray.com/drummer-aidan/maven/" }
