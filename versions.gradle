@@ -58,6 +58,8 @@ versions.firebaseMessage = '17.3.4'
 versions.pandora = 'v1.2.1'
 versions.androidx = '1.0.0'
 versions.commonsCode = '1.11'
+versions.circleImageView = "2.2.0"
+versions.pinentryedittext = '2.0.6'
 
 def deps = [:]
 
@@ -208,6 +210,12 @@ def materialDialogs = [
     "color": "com.afollestad.material-dialogs:color:$versions.materialDialogs"
 ]
 deps.materialDialogs = materialDialogs
+
+def customView = [
+    "circleImageView": "de.hdodenhof:circleimageview:$versions.circleImageView",
+    "pinentryedittext": "com.alimuzaffar.lib:pinentryedittext:$versions.pinentryedittext"
+]
+deps.customView = customView
 
 deps.paging = "androidx.paging:paging-runtime:$versions.paging"
 deps.timber = "com.jakewharton.timber:timber:$versions.timber"
