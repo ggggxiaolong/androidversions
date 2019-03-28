@@ -164,3 +164,97 @@ dependencies {
 }
 ```
 * 示例项目   https://github.com/ggggxiaolong/exampleProject
+
+### 发布项目
+
+1. 项目根`build.gradle`添加依赖
+
+```groovy
+buildscript {
+  apply from: "dependencies/versions.gradle"
+
+  addRepos(repositories)
+  dependencies {
+    classpath deps.plugin.androidGradle
+    classpath deps.plugin.kotlin
+    classpath deps.plugin.kotlinSerialization
+    //.... 添加发布所需的依赖
+    classpath deps.plugin.gradleBinary
+    classpath deps.plugin.androidMaven
+  }
+}
+```
+
+2. 解决 JavaDoc 的编码问题, 项目根`build.gradle`
+
+```groovy
+allprojects {
+  //  def git = Grgit.open(currentDir: projectDir)
+  addGitVersion(gitVersionTag(), gitVersionCode())
+  addRepos(repositories)
+  // 添加下面的代码
+  tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+  }
+}
+
+//在最后添加 注意替换module名
+tasks.getByPath(":taplayout:javadoc").enabled = false
+```
+
+3. 在项目模块的 `build.gradle` 添加
+
+```groovy
+// 开头添加
+apply plugin: 'com.github.dcendents.android-maven'//需添加的
+apply plugin: 'com.jfrog.bintray'//需添加的
+version = build_versions.androidVersionName//版本号，每次更新记得修改
+....
+// 结尾添加
+ext {
+  bintrayRepo = 'Maven' // 对应Bintray网站中，创建Repository的命名
+  bintrayName = 'TabLayout' // 对应Bintray网站中，创建的package的命名(會新建)
+
+  publishedGroupId = 'com.mrtan.tablayout' // 随意，对应之后引用工程的 第一段名称
+  libraryName = 'tablayout'    // 最好是工程名
+  artifact = 'tablayout'    // 最好是工程名，对应之后引用工程的 第二段名称
+
+  libraryDescription = 'Library of tools used in development' // 工程的描述
+
+  siteUrl = 'https://github.com/ggggxiaolong/FlycoTabLayout' // github项目地址
+  gitUrl = 'https://github.com/ggggxiaolong/FlycoTabLayout' // github项目地址git
+
+  libraryVersion = this.version // 随意，对应之后工程的 第三段名称
+
+  developerId = 'ggggxiaolong' // 用户名ID，对应创建bintray账号的名称ID
+  developerName = 'ggggxiaolong' // 用户名ID，对应创建bintray账号的名称ID
+  developerEmail = 'xxxxxx@gmail.com' // 邮箱，对应创建bintray账号的邮箱
+
+  licenseName = 'The Apache Software License, Version 2.0' // 固定
+  licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt' // 固定
+  allLicenses = ["Apache-2.0"] // 固定
+}
+
+apply from: '../dependencies/install.gradle'
+apply from: '../dependencies/publish.gradle'
+
+javadoc { // 引用这个，是为了解决注释中，有中文，然后编译不通过的坑
+  options {
+    encoding "UTF-8"
+    charSet 'UTF-8'
+    //author true
+    version true
+    title 'A LibSDK Support For Android'   // 文档标题
+  }
+}
+```
+
+3.  在 `local.properties` 文件中添加 jcenter 的用户名和 key
+
+```properties
+bintray.user=XXXXXX
+bintray.apikey=XXXXXX
+```
+

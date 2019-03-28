@@ -63,6 +63,8 @@ versions.commonsCode = '1.11'
 versions.circleImageView = "3.0.0"
 versions.pinentryedittext = '2.0.6'
 versions.cloudinary = '1.25.0'
+versions.gradleBintrayPlugin = '1.8.4'
+versions.androidMavenGradlePlugin = '2.0'
 
 def deps = [:]
 
@@ -194,8 +196,6 @@ def kotlin = [
         'jdk': "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${versions.kotlinSerialization}",
         'js': "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${versions.kotlinSerialization}",
     ],
-    'plugin': "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
-    'serializationPlugin': "org.jetbrains.kotlin:kotlin-serialization:$versions.kotlin"
 ]
 deps.kotlin = kotlin
 
@@ -220,6 +220,16 @@ def customView = [
     "pinentryedittext": "com.alimuzaffar.lib:pinentryedittext:$versions.pinentryedittext"
 ]
 deps.customView = customView
+
+def plugin = [
+    "versions":"com.github.ben-manes:gradle-versions-plugin:$versions.libs_version",
+    "androidGradle": "com.android.tools.build:gradle:$versions.android_gradle_plugin",
+    "gradleBinary": "com.jfrog.bintray.gradle:gradle-bintray-plugin:$versions.gradleBintrayPlugin",
+    "androidMaven": "com.github.dcendents:android-maven-gradle-plugin:$versions.androidMavenGradlePlugin",
+    'kotlin': "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+    'kotlinSerialization': "org.jetbrains.kotlin:kotlin-serialization:$versions.kotlin"
+]
+deps.plugin = plugin
 
 deps.paging = "androidx.paging:paging-runtime:$versions.paging"
 deps.timber = "com.jakewharton.timber:timber:$versions.timber"
