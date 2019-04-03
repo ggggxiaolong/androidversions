@@ -49,7 +49,7 @@ versions.bintray = "0.8.0"
 versions.lombok = "1.16.18"
 versions.gradle_lombok = "1.11"
 versions.ktx = "0.3"
-versions.navigation = "1.0.0-alpha08"
+versions.navigation = "2.1.0-alpha01"
 versions.anko = "0.10.8"
 versions.flexbox = "1.1.0"
 versions.recyclerviewdsl = "1.1.0"
@@ -113,10 +113,10 @@ deps.arch_core = arch_core
 
 //apply plugin: "androidx.navigation.safeargs"
 def navigation = [
-    "ui": "android.arch.navigation:navigation-ui:$versions.navigation",
-    "uiKtx": "android.arch.navigation:navigation-ui-ktx:$versions.navigation",
-    "fragment": "android.arch.navigation:navigation-fragment:$versions.navigation",
-    "fragmentKtx": "android.arch.navigation:navigation-fragment-ktx:$versions.navigation",
+    "ui": "androidx.navigation:navigation-ui:$versions.navigation",
+    "uiKtx": "androidx.navigation:navigation-ui-ktx:$versions.navigation",
+    "fragment": "androidx.navigation:navigation-fragment:$versions.navigation",
+    "fragmentKtx": "androidx.navigation:navigation-fragment-ktx:$versions.navigation",
 ]
 deps.navigation = navigation
 
@@ -231,7 +231,7 @@ def plugin = [
     "androidMaven": "com.github.dcendents:android-maven-gradle-plugin:$versions.androidMavenGradlePlugin",
     'kotlin': "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
     'kotlinSerialization': "org.jetbrains.kotlin:kotlin-serialization:$versions.kotlin",
-    "navigationSafe": "android.arch.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
+    "navigationSafe": "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
 ]
 deps.plugin = plugin
 
