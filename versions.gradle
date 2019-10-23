@@ -2,7 +2,7 @@ ext.deps = [:]
 def versions = [:]
 versions.android_gradle_plugin = "3.5.1"
 versions.kotlin = "1.3.50"
-versions.kotlinCoroutines = "1.1.1"
+versions.kotlinCoroutines = "1.3.1"
 versions.kotlinSerialization = '0.13.0'
 versions.kotlinTest = "3.3.3"
 versions.grgit = "2.3.0"
@@ -49,7 +49,7 @@ versions.bintray = "0.8.0"
 versions.lombok = "1.16.18"
 versions.gradle_lombok = "1.11"
 versions.ktx = "0.3"
-versions.navigation = "2.1.0-beta01"
+versions.navigation = "2.1.0"
 versions.anko = "0.10.8"
 versions.flexbox = "1.1.0"
 versions.recyclerviewdsl = "1.1.0"
@@ -272,8 +272,8 @@ ext.deps = deps
 
 def build_versions = [:]
 build_versions.min_sdk = 21
-build_versions.target_sdk = 28
-build_versions.compile_sdk = 28
+build_versions.target_sdk = 29
+build_versions.compile_sdk = 29
 ext.build_versions = build_versions
 
 def addGitVersion(String versionName, int versionCode) {
