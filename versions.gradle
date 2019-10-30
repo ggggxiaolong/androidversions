@@ -73,6 +73,8 @@ versions.permission = '2.0.1'
 versions.google_service = '4.2.0'
 versions.cipher = 'dev-SNAPSHOT'
 versions.rust = '0.8.3'
+versions.imagepicker = '0.7.0'
+
 
 def deps = [:]
 
@@ -263,6 +265,7 @@ deps.flexibledivider = "com.yqritc:recyclerview-flexibledivider:$versions.flexib
 //图片压缩
 deps.compressor = "id.zelory:compressor:$versions.compressor"
 deps.photopicker = "me.iwf.photopicker:PhotoPicker:$versions.photopicker"
+deps.imagepicker = "com.mrtan.android:imagepicker:$versions.imagepicker"
 
 deps.bintray = "com.novoda:bintray-release:$versions.bintray"
 deps.flexbox = "com.google.android:flexbox:$versions.flexbox"
