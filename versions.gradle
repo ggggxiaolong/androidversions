@@ -74,7 +74,7 @@ versions.google_service = '4.2.0'
 versions.cipher = 'dev-SNAPSHOT'
 versions.rust = '0.8.3'
 versions.imagepicker = '0.7.0'
-
+versions.location = '0.0.3'
 
 def deps = [:]
 
@@ -277,6 +277,7 @@ deps.firebaseId = "com.google.firebase:firebase-iid:$versions.firebaseId"
 deps.commonsCode = "commons-codec:commons-codec:$versions.commonsCode"
 deps.cloudinary = "com.cloudinary:cloudinary-android:$versions.cloudinary"
 deps.permission = "com.yanzhenjie.permission:x:$versions.permission"
+deps.location = "com.mrtan.android:googlelocation:$versions.location"
 ext.deps = deps
 
 def build_versions = [:]
