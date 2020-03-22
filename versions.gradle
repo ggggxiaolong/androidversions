@@ -229,7 +229,8 @@ def materialDialogs = [
         "input": "com.afollestad.material-dialogs:input:$versions.materialDialogs",
         "files": "com.afollestad.material-dialogs:files:$versions.materialDialogs",
         "color": "com.afollestad.material-dialogs:color:$versions.materialDialogs",
-        "lifecycle": "com.afollestad.material-dialogs:lifecycle:$versions.materialDialogs"
+        "lifecycle": "com.afollestad.material-dialogs:lifecycle:$versions.materialDialogs",
+        "bottomsheets": "com.afollestad.material-dialogs:bottomsheets:$versions.materialDialogs"
 ]
 deps.materialDialogs = materialDialogs
 
