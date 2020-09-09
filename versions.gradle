@@ -37,7 +37,7 @@ versions.leackCanary = "1.6.2"
 versions.javaxInject = "1"
 versions.arrow = "1.0.0"
 versions.stetho = "1.5.0"
-versions.bugly = "3.1.9"
+versions.bugly = "3.2.3"
 versions.loadingButtom = '1.9'
 versions.flexibledivider = '1.4.0'
 versions.superCalendar = 'v1.4'
@@ -53,7 +53,7 @@ versions.navigation = "2.3.0-alpha01"
 versions.anko = "0.10.8"
 versions.flexbox = "1.1.0"
 versions.recyclerviewdsl = "1.1.0"
-versions.androidUtils = '1.23.4'
+versions.androidUtils = '1.29.0'
 versions.firebaseMessage = '19.0.0'
 versions.firebaseId = '19.0.0'
 versions.pandora = '2.1.0'
@@ -286,8 +286,8 @@ ext.deps = deps
 
 def build_versions = [:]
 build_versions.min_sdk = 21
-build_versions.target_sdk = 29
-build_versions.compile_sdk = 29
+build_versions.target_sdk = 30
+build_versions.compile_sdk = 30
 ext.build_versions = build_versions
 
 def addGitVersion(String versionName, int versionCode) {
