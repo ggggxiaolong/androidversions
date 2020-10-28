@@ -62,7 +62,7 @@ versions.androidx_annotation = '1.1.0'
 versions.androidx_appcompat = '1.1.0-rc01'
 versions.androidx_espresso = '3.2.0-alpha03'
 versions.androidx_localbroadcast = '1.1.0-alpha01'
-versions.androidx_material = '1.1.0'
+versions.androidx_material = '1.2.1'
 versions.androidx_swiperefreshlayout = '1.1.0-alpha03'
 versions.androidx_recyclerView = '1.2.0-alpha01'
 versions.androidx_fragmentKtx = '1.2.0'
@@ -79,6 +79,7 @@ versions.rust = '0.8.3'
 versions.imagepicker = '0.8.1'
 versions.location = '0.0.4'
 versions.work = '2.3.4'
+versions.libPhone="8.12.11"
 
 def deps = [:]
 
@@ -282,6 +283,7 @@ deps.commonsCode = "commons-codec:commons-codec:$versions.commonsCode"
 deps.cloudinary = "com.cloudinary:cloudinary-android:$versions.cloudinary"
 deps.permission = "com.yanzhenjie.permission:x:$versions.permission"
 deps.location = "com.mrtan.android:googlelocation:$versions.location"
+deps.libPhone = "io.michaelrocks:libphonenumber-android:$versions.libPhone"
 ext.deps = deps
 
 def build_versions = [:]
