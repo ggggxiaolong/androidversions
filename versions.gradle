@@ -79,11 +79,13 @@ versions.rust = '0.8.3'
 versions.imagepicker = '0.8.2'
 versions.location = '0.0.4'
 versions.work = '2.5.0-beta02'
-versions.libPhone="8.12.11"
-versions.mmkv="1.2.4"
-versions.lottie='3.5.0'
-versions.exifinterface='1.3.2'
-versions.ccp='2.4.2'
+versions.libPhone = "8.12.11"
+versions.mmkv = "1.2.4"
+versions.lottie = '3.5.0'
+versions.exifinterface = '1.3.2'
+versions.ccp = '2.4.2'
+versions.dfu = '1.11.1'
+versions.permission = "2.0.1"
 
 def deps = [:]
 
@@ -291,7 +293,9 @@ deps.libPhone = "io.michaelrocks:libphonenumber-android:$versions.libPhone"
 deps.mmkv = "com.tencent:mmkv-static:$versions.mmkv"
 deps.lottie = "com.airbnb.android:lottie:$versions.lottie"
 deps.exifinterface = "androidx.exifinterface:exifinterface:$versions.exifinterface"
-deps.ccp="com.hbb20:ccp:$versions.ccp"
+deps.ccp = "com.hbb20:ccp:$versions.ccp"
+deps.dfu = "no.nordicsemi.android:dfu:$versions.dfu"
+deps.permission = "com.yanzhenjie.permission:x:$versions.permission"
 ext.deps = deps
 
 def build_versions = [:]
