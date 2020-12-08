@@ -1,8 +1,8 @@
 ext.deps = [:]
 def versions = [:]
-versions.android_gradle_plugin = "4.1.1"
-versions.kotlin = "1.4.10"
-versions.kotlinCoroutines = "1.4.1"
+versions.android_gradle_plugin = "4.2.0-beta01"
+versions.kotlin = "1.4.20"
+versions.kotlinCoroutines = "1.4.2"
 versions.kotlinSerialization = '1.0.1'
 versions.kotlinTest = "3.4.2"
 versions.grgit = "2.3.0"
@@ -14,17 +14,17 @@ versions.support = "27.1.1"
 versions.dagger = "2.29.1"
 versions.junit = "4.13.1"
 versions.espresso = "3.0.2"
-versions.robolectric = "4.3"
+versions.robolectric = "4.5-alpha-3"
 versions.retrofit = "2.9.0"
 versions.retrofitCoroutinesAdapter = "0.9.2"
 versions.retrofitKotlinSerializationConverter = "0.5.0"
-versions.okhttp3 = "4.9.0"
+versions.okhttp3 = "4.10.0-RC1"
 versions.mockwebserver = "3.8.1"
 versions.apache_commons = "2.5"
 versions.mockito = "3.0.0"
 versions.mockito_all = "2.7.19"
 versions.dexmaker = "2.2.0"
-versions.contraint_layout = "2.0.4"
+versions.contraint_layout = "2.1.0-alpha1"
 versions.glide = "4.11.0"
 versions.timber = "4.7.1"
 versions.atsl_runner = "1.2.0-alpha03"
@@ -37,7 +37,7 @@ versions.leackCanary = "1.6.2"
 versions.javaxInject = "1"
 versions.arrow = "1.0.0"
 versions.stetho = "1.5.0"
-versions.bugly = "3.2.3"
+versions.bugly = "3.3.1"
 versions.loadingButtom = '1.9'
 versions.flexibledivider = '1.4.0'
 versions.superCalendar = 'v1.4'
@@ -49,22 +49,22 @@ versions.bintray = "0.8.0"
 versions.lombok = "1.16.18"
 versions.gradle_lombok = "1.11"
 versions.ktx = "0.3"
-versions.navigation = "2.3.1"
+versions.navigation = "2.3.2"
 versions.anko = "0.10.8"
 versions.flexbox = "2.0.1"
 versions.recyclerviewdsl = "1.1.0"
-versions.androidUtils = '1.30.4'
+versions.androidUtils = '1.30.5'
 versions.firebaseMessage = '19.0.0'
 versions.firebaseId = '19.0.0'
 versions.pandora = '2.1.0'
-versions.androidx = '1.0.0'
+versions.androidx = '1.5.0-alpha05'
 versions.androidx_annotation = '1.1.0'
-versions.androidx_appcompat = '1.1.0-rc01'
+versions.androidx_appcompat = '1.3.0-alpha02'
 versions.androidx_espresso = '3.2.0-alpha03'
 versions.androidx_localbroadcast = '1.1.0-alpha01'
-versions.androidx_material = '1.2.1'
-versions.androidx_swiperefreshlayout = '1.1.0-alpha03'
-versions.androidx_recyclerView = '1.2.0-alpha06'
+versions.androidx_material = '1.3.0-alpha04'
+versions.androidx_swiperefreshlayout = '1.2.0-alpha01'
+versions.androidx_recyclerView = '1.2.0-beta01'
 versions.androidx_fragmentKtx = '1.2.0'
 versions.commonsCode = '1.12'
 versions.circleImageView = "3.1.0"
@@ -78,9 +78,12 @@ versions.cipher = 'dev-SNAPSHOT'
 versions.rust = '0.8.3'
 versions.imagepicker = '0.8.2'
 versions.location = '0.0.4'
-versions.work = '2.5.0-beta01'
+versions.work = '2.5.0-beta02'
 versions.libPhone="8.12.11"
 versions.mmkv="1.2.4"
+versions.lottie='3.5.0'
+versions.exifinterface='1.3.2'
+versions.ccp='2.4.2'
 
 def deps = [:]
 
@@ -286,6 +289,9 @@ deps.permission = "com.yanzhenjie.permission:x:$versions.permission"
 deps.location = "com.mrtan.android:googlelocation:$versions.location"
 deps.libPhone = "io.michaelrocks:libphonenumber-android:$versions.libPhone"
 deps.mmkv = "com.tencent:mmkv-static:$versions.mmkv"
+deps.lottie = "com.airbnb.android:lottie:$versions.lottie"
+deps.exifinterface = "androidx.exifinterface:exifinterface:$versions.exifinterface"
+deps.ccp="com.hbb20:ccp:$versions.ccp"
 ext.deps = deps
 
 def build_versions = [:]
@@ -313,8 +319,6 @@ def addRepos(RepositoryHandler handler) {
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     handler.maven { url 'https://jitpack.io' }
     handler.maven { url "https://dl.bintray.com/drummer-aidan/maven/" }
-    handler.maven { url "$rootDir/../node_modules/react-native/android" }
-    handler.flatDir { dirs 'libs' }
 }
 
 ext.addRepos = this.&addRepos
