@@ -4,7 +4,7 @@ versions.android_gradle_plugin = "4.2.0-beta01"
 versions.kotlin = "1.4.20"
 versions.kotlinCoroutines = "1.4.2"
 versions.kotlinSerialization = '1.0.1'
-versions.kotlinTest = "3.4.2"
+versions.kotlinTest = "4.3.1"
 versions.grgit = "2.3.0"
 versions.libs_version = "0.36.0"
 versions.lifecycle = "2.2.0"
@@ -206,7 +206,7 @@ def kotlin = [
                 'annotations': "org.jetbrains.kotlin:kotlin-test-annotations-common:${versions.kotlin}",
                 'jdk'        : "org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}",
                 'js'         : "org.jetbrains.kotlin:kotlin-test-js:${versions.kotlin}",
-                'junit5'     : "io.kotlintest:kotlintest-runner-junit5:$versions.kotlinTest",
+                'junit5'     : "io.kotest:kotest-runner-junit5:$versions.kotlinTest",
         ],
         'coroutines'   : [
                 'core'   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinCoroutines}",
