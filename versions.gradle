@@ -72,7 +72,6 @@ versions.pinentryedittext = '2.0.6'
 versions.cloudinary = '1.26.0'
 versions.gradleBintrayPlugin = '1.8.4'
 versions.androidMavenGradlePlugin = '2.0'
-versions.permission = '2.0.1'
 versions.google_service = '4.2.0'
 versions.cipher = 'dev-SNAPSHOT'
 versions.rust = '0.8.3'
@@ -85,7 +84,7 @@ versions.lottie = '3.5.0'
 versions.exifinterface = '1.3.2'
 versions.ccp = '2.4.2'
 versions.dfu = '1.11.1'
-versions.permission = "2.0.1"
+versions.permission = "2.0.3"
 
 def deps = [:]
 
@@ -287,7 +286,7 @@ deps.firebaseMessage = "com.google.firebase:firebase-messaging:$versions.firebas
 deps.firebaseId = "com.google.firebase:firebase-iid:$versions.firebaseId"
 deps.commonsCode = "commons-codec:commons-codec:$versions.commonsCode"
 deps.cloudinary = "com.cloudinary:cloudinary-android:$versions.cloudinary"
-deps.permission = "com.yanzhenjie.permission:x:$versions.permission"
+deps.permission = "com.yanzhenjie.permission:$versions.permission"
 deps.location = "com.mrtan.android:googlelocation:$versions.location"
 deps.libPhone = "io.michaelrocks:libphonenumber-android:$versions.libPhone"
 deps.mmkv = "com.tencent:mmkv-static:$versions.mmkv"
@@ -295,7 +294,6 @@ deps.lottie = "com.airbnb.android:lottie:$versions.lottie"
 deps.exifinterface = "androidx.exifinterface:exifinterface:$versions.exifinterface"
 deps.ccp = "com.hbb20:ccp:$versions.ccp"
 deps.dfu = "no.nordicsemi.android:dfu:$versions.dfu"
-deps.permission = "com.yanzhenjie.permission:x:$versions.permission"
 ext.deps = deps
 
 def build_versions = [:]
