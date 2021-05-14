@@ -1,17 +1,17 @@
 ext.deps = [:]
 def versions = [:]
-versions.android_gradle_plugin = '4.1.3'
-versions.kotlin = "1.4.31"
-versions.kotlinCoroutines = "1.4.2"
-versions.kotlinSerialization = '1.0.1'
+versions.android_gradle_plugin = '4.2.1'
+versions.kotlin = "1.5.0"
+versions.kotlinCoroutines = "1.5.0-RC"
+versions.kotlinSerialization = '1.2.1'
 versions.kotlinTest = "4.3.1"
 versions.grgit = "2.3.0"
-versions.libs_version = "0.36.0"
-versions.lifecycle = "2.2.0"
+versions.libs_version = "0.38.0"
+versions.lifecycle = "2.3.1"
 versions.arch = "1.1.1"
-versions.room = "2.2.1"
+versions.room = "2.3.0"
 versions.support = "27.1.1"
-versions.dagger = "2.29.1"
+versions.dagger = "2.35.1"
 versions.junit = "4.13.1"
 versions.espresso = "3.0.2"
 versions.robolectric = "4.5-alpha-3"
@@ -24,8 +24,8 @@ versions.apache_commons = "2.5"
 versions.mockito = "3.0.0"
 versions.mockito_all = "2.7.19"
 versions.dexmaker = "2.2.0"
-versions.contraint_layout = "2.1.0-alpha1"
-versions.glide = "4.11.0"
+versions.contraint_layout = "2.1.0-beta02"
+versions.glide = "4.12.0"
 versions.timber = "4.7.1"
 versions.atsl_runner = "1.2.0-alpha03"
 versions.atsl_rules = "1.1.1"
@@ -49,7 +49,7 @@ versions.bintray = "0.8.0"
 versions.lombok = "1.16.18"
 versions.gradle_lombok = "1.11"
 versions.ktx = "0.3"
-versions.navigation = "2.3.2"
+versions.navigation = "2.3.5"
 versions.anko = "0.10.8"
 versions.flexbox = "2.0.1"
 versions.recyclerviewdsl = "1.1.0"
@@ -58,13 +58,13 @@ versions.firebaseMessage = '19.0.0'
 versions.firebaseId = '19.0.0'
 versions.pandora = '2.1.0'
 versions.androidx = '1.5.0-alpha05'
-versions.androidx_annotation = '1.1.0'
-versions.androidx_appcompat = '1.3.0-alpha02'
+versions.androidx_annotation = '1.2.0'
+versions.androidx_appcompat = '1.3.0-rc01'
 versions.androidx_espresso = '3.2.0-alpha03'
 versions.androidx_localbroadcast = '1.1.0-alpha01'
-versions.androidx_material = '1.3.0-alpha04'
+versions.androidx_material = '1.4.0-beta01'
 versions.androidx_swiperefreshlayout = '1.2.0-alpha01'
-versions.androidx_recyclerView = '1.2.0-beta01'
+versions.androidx_recyclerView = '1.2.0'
 versions.androidx_fragmentKtx = '1.2.5'
 versions.androidx_activityKtx = '1.1.0'
 versions.commonsCode = '1.12'
@@ -78,10 +78,10 @@ versions.cipher = 'dev-SNAPSHOT'
 versions.rust = '0.8.3'
 versions.imagepicker = '0.8.2'
 versions.location = '0.0.4'
-versions.work = '2.5.0-beta02'
-versions.libPhone = "8.12.11"
+versions.work = '2.5.0'
+versions.libPhone = "8.12.23"
 versions.mmkv = "1.2.4"
-versions.lottie = '3.5.0'
+versions.lottie = '3.7.0'
 versions.exifinterface = '1.3.2'
 versions.ccp = '2.4.2'
 versions.dfu = '1.11.1'
@@ -119,10 +119,10 @@ def room = [
 deps.room = room
 
 def lifecycle = [
-        "runtime"   : "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle",
-        "extensions": "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle",
-        "viewmodel" : "androidx.lifecycle:lifecycle-viewmodel:$versions.lifecycle",
-        "livedata"  : "androidx.lifecycle:lifecycle-livedata:$versions.lifecycle",
+        "runtime"   : "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle",
+//        "extensions": "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle",
+        "viewmodel" : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle",
+        "livedata"  : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle",
         "java8"     : "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle",
         "compiler"  : "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
 ]
@@ -312,21 +312,18 @@ def addGitVersion(String versionName, int versionCode) {
 ext.addGitVersion = this.&addGitVersion
 
 def addRepos(RepositoryHandler handler) {
+    handler.google()
     handler.maven { url 'https://maven.aliyun.com/repository/central' }
     handler.maven { url 'https://maven.aliyun.com/repository/google' }
     handler.maven { url 'https://maven.aliyun.com/repository/public' }
     handler.maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
-    handler.google()
-    handler.jcenter()
     handler.mavenLocal()
     handler.mavenCentral()
     handler.maven { url "https://kotlin.bintray.com/kotlinx" }
     handler.maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
-    handler.maven { url "https://kotlin.bintray.com/kotlinx" }
     handler.maven { url "https://plugins.gradle.org/m2/" }
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     handler.maven { url 'https://jitpack.io' }
-    handler.maven { url "https://dl.bintray.com/drummer-aidan/maven/" }
 }
 
 ext.addRepos = this.&addRepos
