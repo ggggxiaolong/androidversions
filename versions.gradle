@@ -88,6 +88,7 @@ versions.dfu = '1.11.1'
 versions.permission = "2.0.1"
 versions.photoView = "2.3.0"
 versions.flowLayout = "1.8.0"
+versions.hilt = "2.37"
 
 def deps = [:]
 
@@ -174,6 +175,14 @@ def dagger = [
 ]
 deps.dagger = dagger
 
+def hilt = [
+        "runtime"                  : "com.google.dagger:hilt-android:$versions.hilt",
+        "compiler"                 : "com.google.dagger:hilt-android-compiler:$versions.hilt",
+        "viewmodel"                : "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03",
+        "worker"                   : "androidx.hilt:hilt-work:1.0.0",
+        "workerCompiler"           : "androidx.hilt:hilt-compiler:1.0.0"
+]
+deps.hilt = hilt
 
 // https://github.com/Kotlin/anko
 def anko = [
@@ -255,7 +264,8 @@ def plugin = [
         "navigationSafe"     : "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation",
         'goolgeService'      : "com.google.gms:google-services:$versions.google_service",
         'cipher'             : "com.github.MEiDIK:Cipher.so:$versions.cipher",
-        'rust'               : "gradle.plugin.org.mozilla.rust-android-gradle:plugin:$versions.rust"
+        'rust'               : "gradle.plugin.org.mozilla.rust-android-gradle:plugin:$versions.rust",
+        "hilt"               : "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt"
 ]
 deps.plugin = plugin
 
